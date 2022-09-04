@@ -1,5 +1,6 @@
-import React, { FC } from "react";
+import React, { FC, MouseEventHandler } from "react";
 import { Board } from "../Models/Board";
+import { Coordinates } from "../Models/Coordinates";
 import { CellComponent } from "./CellComponent";
 
 interface BoardProps {
@@ -12,7 +13,12 @@ export const BoardComponent: FC<BoardProps> = ({ board }) => {
       {board.cells.map((row, idx) => (
         <React.Fragment key={idx}>
           {row.map((cell) => (
-            <CellComponent cell={cell} />
+            <CellComponent
+              key={
+                cell.coordinates.file + Number(cell.coordinates.rank).toString()
+              }
+              cell={cell}
+            />
           ))}
         </React.Fragment>
       ))}

@@ -1,10 +1,10 @@
-import { Coordinates } from "./../Coordinates";
-import { Colors } from "./../Colors";
+import { Coordinates } from "../Coordinates";
+import { Colors } from "../Colors";
 import { Figure, FigureNames } from "./Figure";
-import BlackFigureImage from "../../Assets/Figures/black-king.png";
-import WhiteFigureImage from "../../Assets/Figures/white-king.png";
+import BlackFigureImage from "../../Assets/Figures/black-knight.png";
+import WhiteFigureImage from "../../Assets/Figures/white-knight.png";
 
-export class King extends Figure {
+export class Knight extends Figure {
   canMove: Boolean;
   image: typeof BlackFigureImage;
   name: FigureNames;
@@ -15,7 +15,7 @@ export class King extends Figure {
 
     this.canMove = canMove;
     this.image = color === Colors.BLACK ? BlackFigureImage : WhiteFigureImage;
-    this.name = FigureNames.KING;
+    this.name = FigureNames.KNIGHT;
     this.coordinates = coordinates;
   }
 }

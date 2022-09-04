@@ -15,5 +15,4 @@ export class Move {
     this.fromCoordinates = fromCoordinates;
     this.toCoordinates = toCoordinates;
   }
-	
 }

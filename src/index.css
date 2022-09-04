@@ -20,9 +20,11 @@ code {
 }
 
 .cell {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 0;
 
   background: darkgray;
   width: 3rem;
@@ -31,21 +33,27 @@ code {
 }
 
 .figure-image {
+  height: 3rem;
   width: 3rem;
+  z-index: 100;
 }
+
+/* .figure {
+  background: magenta;
+} */
 
 .BLACK {
   background: rgb(122, 157, 178);
 }
 
-.BLACK:hover {
+/* .BLACK:hover {
   border: 2px solid rgba(255, 255, 255, 0.5);
-}
+} */
 
 .WHITE {
   background: rgb(217, 228, 232);
 }
 
-.WHITE:hover {
+/* .WHITE:hover {
   border: 2px solid rgba(255, 255, 255, 0.5);
-}
+} */
