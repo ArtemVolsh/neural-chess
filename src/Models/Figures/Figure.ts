@@ -6,6 +6,8 @@ import BlackFigureImage from "../../Assets/Figures/black-king.png";
 export class Figure {
   color: Colors;
   canMove: Boolean;
+  moveOptions: Cell[];
+
   image: typeof BlackFigureImage | null;
   coordinates: Coordinates | null;
   name: FigureNames | null;
@@ -21,7 +23,10 @@ export class Figure {
     this.image = null;
     this.coordinates = coordinates;
     this.name = null;
+    this.moveOptions = [];
   }
+
+  getMoveOptions() {}
 }
 
 export enum FigureNames {

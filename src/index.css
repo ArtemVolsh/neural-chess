@@ -12,11 +12,16 @@ code {
     monospace;
 }
 
+:root {
+  --cell-size: 6rem;
+}
+
 .board {
   display: flex;
   flex-wrap: wrap;
-  height: calc(3rem * 8);
-  width: calc(3rem * 8);
+  height: calc(var(--cell-size) * 8);
+  width: calc(var(--cell-size) * 8);
+  border-radius: 5px;
 }
 
 .cell {
@@ -27,14 +32,14 @@ code {
   z-index: 0;
 
   background: darkgray;
-  width: 3rem;
-  height: 3rem;
+  width: var(--cell-size);
+  height: var(--cell-size);
   box-sizing: border-box;
 }
 
 .figure-image {
-  height: 3rem;
-  width: 3rem;
+  height: var(--cell-size);
+  width: var(--cell-size);
   z-index: 100;
 }
 
@@ -43,17 +48,27 @@ code {
 } */
 
 .BLACK {
-  background: rgb(122, 157, 178);
+  /* Dark Blue */
+  /* background: rgb(122, 157, 178);  */
+  /* Dark Green */
+  /* background: rgb(119, 149, 86); */
+  /* Dark Brown */
+  background: rgb(209, 139, 71);
 }
-
-/* .BLACK:hover {
-  border: 2px solid rgba(255, 255, 255, 0.5);
-} */
 
 .WHITE {
-  background: rgb(217, 228, 232);
+  /* Light Blue */
+  /* background: rgb(217, 228, 232); */
+  /* Light Green */
+  /* background: rgb(235, 236, 208); */
+  /* Light Brown */
+  background: rgb(255, 206, 158);
 }
 
-/* .WHITE:hover {
-  border: 2px solid rgba(255, 255, 255, 0.5);
-} */
+.BLACK:hover {
+  border: 2px solid rgba(255, 255, 255, 1);
+}
+
+.WHITE:hover {
+  border: 2px solid rgba(255, 255, 255, 1);
+}

@@ -11,7 +11,7 @@ export class Queen extends Figure {
   coordinates: Coordinates | null;
 
   constructor(color: Colors, canMove: Boolean, coordinates: Coordinates) {
-    super(color, canMove, coordinates, null);
+    super(color, canMove, coordinates, FigureNames.QUEEN);
 
     this.canMove = canMove;
     this.image = color === Colors.BLACK ? BlackFigureImage : WhiteFigureImage;

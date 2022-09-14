@@ -12,8 +12,6 @@ import { Bishop } from "./Figures/Bishop";
 export class Board {
   cells: Cell[][] = [];
 
-  constructor() {}
-
   public files = ["a", "b", "c", "d", "e", "f", "g", "h"];
   public ranks = [1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -176,16 +174,16 @@ export class Board {
   }
 
   public initializeBoard() {
-    // Generating files
+    // Generating ranks
     for (let rank = 0; rank < 8; rank++) {
       const row: Cell[] = [];
-      // Generating ranks
+      // Generating files
       for (let file = 0; file < 8; file++) {
         // Condition for the pawn ranks for both sides
         switch (rank) {
           // White pawns rank
-          case 0:
-          case 7:
+          case 0: // rank 1
+          case 7: // rank 8
             switch (file) {
               case 0: // file A
               case 7: // file H
@@ -209,18 +207,20 @@ export class Board {
                 Board.pushNewCell(rank, file, row, this.files, this.ranks);
                 continue;
             }
-            continue;
-          case 1:
-          case 6:
+          case 1: // rank 2
+          case 6: // rank 7
             Board.initPawns(rank, file, row, this.files, this.ranks);
             continue;
-          default:
+          default: // other ranks
             Board.pushNewCell(rank, file, row, this.files, this.ranks);
         }
       }
       this.cells.push(row);
     }
-    console.log(this.cells);
+  }
+
+  public getCell(x: number, y: number) {
+    return this.cells[x][y];
   }
 
   public initializeFigures(position: Position) {}
